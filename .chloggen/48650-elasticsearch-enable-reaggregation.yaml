@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/elasticsearch
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Enable re-aggregation of Elasticsearch metrics by adding support for `MetricsToBatchSize` configuration option.
+
+# One or more tracking issues related to the change
+issues: [48650]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  This change enables the re-aggregation feature for the Elasticsearch receiver,
+  allowing users to batch metrics before sending them downstream. This can help
+  reduce cardinality and improve performance in high-volume environments.
