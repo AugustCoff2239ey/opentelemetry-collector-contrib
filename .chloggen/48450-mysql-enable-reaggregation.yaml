@@ -1,0 +1,21 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/mysql
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Enable reaggregation for MySQL receiver metrics to reduce cardinality
+
+# One or more tracking issues related to the change
+issues: [48450]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  Adds support for the `reaggregate` configuration option in the MySQL receiver,
+  allowing users to enable metric reaggregation to reduce cardinality by merging
+  label values. This is consistent with the reaggregation support added to other
+  receivers such as httpcheck, kubeletstats, hostmetrics, vcenter, nginx, apache,
+  iis, and redis.
