@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/activedirectoryds
+
+# A brief description of the change. Surround your text with quotes ("text") if it needs to start with a backtick (`)
+description: Enable reaggregation of Active Directory DS metrics by removing redundant attributes to reduce metric cardinality.
+
+# One or more tracking issues related to the change
+issues: [48700]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  A new configuration option `metrics::reaggregation` has been added to the Active Directory DS receiver.
+  When enabled, metrics will be reaggregated by removing high-cardinality attributes, reducing the number
+  of time series emitted by the receiver.
