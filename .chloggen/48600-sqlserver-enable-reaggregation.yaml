@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/sqlserver
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Enable reaggregation of metrics that have resource attributes promoted to metric attributes
+
+# Mandatory: One or more tracking issues related to the change. You can use the PR number here if no issue exists.
+issues: [48600]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  When `resource_attributes` are promoted to `metric_attributes`, metrics with the same
+  name but different resource attribute values need to be reaggregated to avoid duplicate
+  data points. This change enables that reaggregation for the sqlserver receiver.
