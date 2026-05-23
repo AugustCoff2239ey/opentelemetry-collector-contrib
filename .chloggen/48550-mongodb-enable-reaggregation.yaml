@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/mongodb
+
+# A brief description of the change. Surpassing 80 chars is allowed only if there is no way to
+# make it shorter.
+note: Add reaggregation support for MongoDB receiver metrics
+
+# One or more tracking issues related to the change
+issues: [48550]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Enables the `MetricsBuilderConfig.ResourceAttributesConfig` to allow
+  users to configure reaggregation of MongoDB metrics by resource attributes.
