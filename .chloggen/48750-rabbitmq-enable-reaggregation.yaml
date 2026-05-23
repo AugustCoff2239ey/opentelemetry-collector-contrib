@@ -1,0 +1,20 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/rabbitmq
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (``).
+short_description: Enable reaggregation for RabbitMQ receiver metrics
+
+# One or more tracking issues related to the change
+issues: [48750]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+note: |
+  Enables the `WithStartTimeOverride` option for monotonic sum metrics in the
+  RabbitMQ receiver to support reaggregation when the receiver is restarted.
+  This aligns the RabbitMQ receiver behavior with other receivers that have
+  already adopted this pattern.
