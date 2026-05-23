@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp, ...
+component: receiver/apache
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Enable reaggregation of Apache metrics to reduce cardinality by aggregating metrics across server name dimensions.
+
+# One or more tracking issues related to the change
+issues: [48301]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Adds a new `reaggregate` configuration option to the Apache receiver that allows
+  users to aggregate metrics across the `server_name` attribute, reducing metric
+  cardinality in environments with many virtual hosts.
