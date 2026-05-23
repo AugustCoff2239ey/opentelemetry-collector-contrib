@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp
+component: receiver/couchdb
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Enable `reaggregation` for CouchDB receiver metrics to support cumulative temporality conversion.
+
+# One or more tracking issues related to the change
+issues: [48800]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Enables the `WithStartTimeOverride` option for CouchDB receiver metrics that use
+  monotonic sum data points, allowing the metrics pipeline to properly reaggregate
+  cumulative metrics when restarting the collector.
