@@ -1,0 +1,18 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/hostmetrics
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Enable re-aggregation of host metrics scrapers to reduce metric cardinality by combining dimensions.
+
+# One or more tracking issues related to the change
+issues: [48150]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Adds support for the `reaggregation` configuration option in the hostmetrics receiver,
+  allowing users to aggregate metrics across specified label dimensions to reduce cardinality.
