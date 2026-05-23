@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/postgresql
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (``).
+short_description: Enable re-aggregation of postgresql metrics by default
+
+# One or more tracking issues related to the change
+issues: [48500]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  Enables the `resource_attributes` re-aggregation feature gate for the postgresql receiver
+  so that metrics are properly aggregated when multiple databases are monitored.
+  This aligns with the behavior of other receivers that have already enabled this feature.
