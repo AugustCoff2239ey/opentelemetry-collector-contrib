@@ -1,0 +1,18 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/redis
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Add `metrics.resource_attributes_as_metric_attributes` configuration option to enable re-aggregation of metrics by resource attributes.
+
+# One or more tracking issues related to the change
+issues: [48400]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  When enabled, resource attributes will be converted to metric attributes,
+  allowing for re-aggregation of metrics by those attributes in downstream processors.
