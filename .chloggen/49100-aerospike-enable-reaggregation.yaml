@@ -1,0 +1,18 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/aerospike
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Enable reaggregation of metrics with start timestamp for Aerospike receiver
+
+# One or more tracking issues related to the change
+issues: [49100]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Enables the reaggregation of metrics with start timestamps to allow for
+  proper cumulative sum aggregation when the Aerospike receiver restarts.
