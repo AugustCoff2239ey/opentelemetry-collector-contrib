@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/bigip
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Enable reaggregation for BigIP receiver metrics by setting start timestamp on monotonic cumulative metrics.
+
+# One or more tracking issues related to the change
+issues: [49050]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  This change sets the start timestamp on monotonic cumulative metrics emitted by the
+  BigIP receiver. This enables reaggregation of these metrics in downstream processors
+  and backends that support delta temporality conversion.
