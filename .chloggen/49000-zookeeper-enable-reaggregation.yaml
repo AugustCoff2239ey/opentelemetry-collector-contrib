@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: receiver/zookeeper
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Enable re-aggregation of metrics for the zookeeper receiver to reduce metric cardinality
+
+# One or more tracking issues related to the change
+issues: [49000]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  Adds support for the `metric_name` re-aggregation feature in the zookeeper receiver.
+  This allows users to aggregate metrics by dropping specific attributes, which can
+  significantly reduce the cardinality of metrics emitted by the receiver.
